@@ -1,0 +1,3 @@
+TODO: Revisar tudo de streams depois
+TODO: Revisar a fundo o uso de lambdas
+TODO: Revisar a fundo Threads e novos recursos de Threads a partir do java17
