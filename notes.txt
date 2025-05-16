@@ -3,6 +3,7 @@ TODO: Revisar tudo de streams depois
 TODO: Revisar a fundo o uso de lambdas
 TODO: Revisar a fundo Threads e novos recursos de Threads a partir do java17
 TODO: Revisar datas
+TODO: Revisar generics
 
 ETC:
 TODO: Revisar git (especialmente git reset, git cherry-pick, git restore, git stash)
