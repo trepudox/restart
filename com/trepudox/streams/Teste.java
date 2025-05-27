@@ -1,12 +1,14 @@
 package com.trepudox.streams;
 
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
+import java.util.Objects;
 
 public class Teste {
 
     public static void main(String[] args) {
-        List<Integer> integerList = List.of(1, 2, 3, 3, 3, 3, 4, 5);
+        List<Integer> integerList = List.of(1, 2, 3, 3, 3, 3, 4, 5, 6, 7, 7);
         List<List<Integer>> integerListsList = List.of(List.of(1, 2, 3), List.of(4, 5, 6), List.of(7, 8, 9));
 
         print("integerList: " + integerList);
@@ -17,18 +19,21 @@ public class Teste {
 
         distinct(integerList);
 
+        filter(integerList);
+
         map(integerList);
 
         flatMap(integerListsList);
 
         mapAndFlatMap(integerListsList);
+
+        allMatch(integerList);
     }
 
     public static void reduce(List<Integer> integerList) {
         print("reduce(integerList) - " +
                 integerList.stream()
-//                      .reduce(Integer::sum)  // Usando method reference
-                        .reduce((n1, r) -> r + n1)
+                        .reduce(Integer::sum)
                         .orElse(0));
     }
 
@@ -39,14 +44,20 @@ public class Teste {
                         .toList());
     }
 
+    public static void filter(List<Integer> integerList) {
+        print("filter(integerList) - " +
+                integerList.stream()
+                        .filter(n -> n % 2 == 0)
+                        .toList());
+    }
+
     public static void map(List<Integer> integerList) {
         // ! No map(), cada elemento será transformado em um outro elemento, podendo ser do mesmo tipo ou não.
         // ! É uma transformação "one-to-one"
 
         print("map(integerList) - " +
                 integerList.stream()
-//                      .map(String::valueOf)  // Usando method reference
-                        .map(i -> String.valueOf(i))
+                        .map(i -> i + "string")
                         .toList()
         );
     }
@@ -58,8 +69,7 @@ public class Teste {
 
         print("flatMap(integerListsList) - " +
                 integerListsList.stream()
-//                      .flatMap(Collection::stream)  // Usando method reference
-                        .flatMap(l -> l.stream())
+                        .flatMap(Collection::stream)
                         .toList());
     }
 
@@ -71,8 +81,15 @@ public class Teste {
                             newList.add(0);
                             return newList;
                         })
-                        .flatMap(l -> l.stream())
+                        .flatMap(Collection::stream)
                         .toList());
+    }
+
+    public static void allMatch(List<Integer> integerList) {
+        print("allMatch(integerList) - " +
+                integerList.stream()
+                        .allMatch(Objects::nonNull)
+        );
     }
 
     public static void print(Object o) {
