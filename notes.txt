@@ -13,3 +13,5 @@ ETC:
 TODO: Revisar git (especialmente git reset, git cherry-pick, git restore, git stash)
 
 TODO: Usando o projeto de JDBC, criar um front básico, (HTML, CSS e JS) e usar HTTPServer pra comunicação do backend
+
+TODO: Revisar Design Patterns e Anti Patterns, SOLID, Clean Code e arquiteturas
