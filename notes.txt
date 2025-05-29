@@ -6,7 +6,6 @@ TODO: Revisar datas
 TODO: Revisar generics
 TODO: Estudar WebSockets
 TODO: Revisar JUnit, Mockito e tal
-TODO: Mexer com Quarkus
 
 ETC:
 TODO: Revisar git (especialmente git reset, git cherry-pick, git restore, git stash)
